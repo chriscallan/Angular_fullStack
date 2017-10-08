@@ -1,7 +1,9 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {MdToolbarModule, MdButtonModule, MdCheckboxModule, MatListModule, MatGridListModule, MatCardModule} from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -16,6 +18,7 @@ import { DishService } from './services/dish.service';
 import { LeaderService } from './services/leader.service';
 import { PromotionService } from './services/promotion.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule, 
@@ -38,9 +42,12 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MdCheckboxModule,
     MatListModule, 
     MatGridListModule, 
-    MatCardModule
+    MatCardModule, 
+    FormsModule, 
+    MdDialogModule
   ],
   providers: [DishService, PromotionService, LeaderService],
+  entryComponents: [ LoginComponent ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
