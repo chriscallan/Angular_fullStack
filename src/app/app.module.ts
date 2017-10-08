@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {MdToolbarModule, MdButtonModule, MdCheckboxModule, MatListModule, MatGridListModule, MatCardModule} from '@angular/material';
-import { MdDialog, MdDialogRef, MdDialogModule } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogModule, MdInputModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -43,8 +43,9 @@ import { LoginComponent } from './login/login.component';
     MatListModule, 
     MatGridListModule, 
     MatCardModule, 
-    FormsModule, 
-    MdDialogModule
+    MdDialogModule, 
+    MdInputModule,
+    FormsModule
   ],
   providers: [DishService, PromotionService, LeaderService],
   entryComponents: [ LoginComponent ],
