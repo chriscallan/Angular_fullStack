@@ -25,6 +25,9 @@
       </md-card-actions>
     </md-card>
   </div>
+  <div [hidden]="dish">
+      <md-spinner></md-spinner><h4>Loading... Please wait</h4>
+  </div>
 
   <div fxFlex="40">
     <h2><b>Comments</b></h2>

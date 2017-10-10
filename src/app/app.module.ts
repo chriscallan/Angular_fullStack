@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { MdToolbarModule, MdButtonModule, MdCheckboxModule, MatListModule, MatGridListModule, MatCardModule } from '@angular/material';
 import { MdDialog, MdDialogRef, MdDialogModule, MdInputModule, MdOption, MdSelectModule } from '@angular/material';
 import { MdSlideToggleModule } from '@angular/material';
+import { MdProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -43,6 +44,7 @@ import { LoginComponent } from './login/login.component';
     MdCheckboxModule,
     MdSelectModule,
     MdSlideToggleModule,
+    MdProgressSpinnerModule, 
     MatListModule, 
     MatGridListModule, 
     MatCardModule, 
