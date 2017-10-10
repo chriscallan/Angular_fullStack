@@ -1,9 +1,10 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {MdToolbarModule, MdButtonModule, MdCheckboxModule, MatListModule, MatGridListModule, MatCardModule} from '@angular/material';
-import { MdDialog, MdDialogRef, MdDialogModule, MdInputModule } from '@angular/material';
+import { MdToolbarModule, MdButtonModule, MdCheckboxModule, MatListModule, MatGridListModule, MatCardModule } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogModule, MdInputModule, MdOption, MdSelectModule } from '@angular/material';
+import { MdSlideToggleModule, MdSlideToggleChange, MdSlideToggle } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 import { AppComponent } from './app.component';
@@ -40,12 +41,15 @@ import { LoginComponent } from './login/login.component';
     MdToolbarModule, 
     MdButtonModule, 
     MdCheckboxModule,
+    MdSelectModule,
+    MdSlideToggleModule,
     MatListModule, 
     MatGridListModule, 
     MatCardModule, 
     MdDialogModule, 
     MdInputModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [DishService, PromotionService, LeaderService],
   entryComponents: [ LoginComponent ],
