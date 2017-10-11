@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { MdToolbarModule, MdButtonModule, MdCheckboxModule, MatListModule, MatGridListModule, MatCardModule } from '@angular/material';
-import { MdDialog, MdDialogRef, MdDialogModule, MdInputModule, MdOption, MdSelectModule } from '@angular/material';
-import { MdSlideToggleModule } from '@angular/material';
+import { MdDialog, MdDialogRef, MdDialogModule, MdInputModule, MdOption, MdSelectModule, MdFormFieldModule } from '@angular/material';
+import { MdSlideToggleModule, MdSliderModule } from '@angular/material';
 import { MdProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
@@ -51,7 +51,9 @@ import { LoginComponent } from './login/login.component';
     MdDialogModule, 
     MdInputModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MdSliderModule, 
+    MdFormFieldModule
   ],
   providers: [DishService, PromotionService, LeaderService],
   entryComponents: [ LoginComponent ],
