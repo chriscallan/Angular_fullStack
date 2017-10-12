@@ -1,4 +1,5 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -19,8 +20,10 @@ import { ContactComponent } from './contact/contact.component';
 import { DishService } from './services/dish.service';
 import { LeaderService } from './services/leader.service';
 import { PromotionService } from './services/promotion.service';
+import { ProcessHttpmsgService } from './services/process-httpmsg.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { baseURL } from './shared/baseurl';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule, 
+    HttpModule, 
     BrowserAnimationsModule, 
     FlexLayoutModule, 
     AppRoutingModule,
@@ -55,7 +59,8 @@ import { LoginComponent } from './login/login.component';
     MdSliderModule, 
     MdFormFieldModule
   ],
-  providers: [DishService, PromotionService, LeaderService],
+  providers: [DishService, PromotionService, LeaderService, 
+  { provide: 'BaseURL', useValue: baseURL }, ProcessHttpmsgService],
   entryComponents: [ LoginComponent ],
   bootstrap: [AppComponent]
 })
