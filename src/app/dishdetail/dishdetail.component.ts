@@ -24,14 +24,14 @@ export class DishdetailComponent implements OnInit {
   next: number;
 
   formErrors = {
-    'name': '', 
+    'author': '', 
     'comment': ''
   }
 
   validationMessages = {
-    'name': {
-      'required': 'Name is required.', 
-      'minlength': 'Name must be at least 2 characters long.'
+    'author': {
+      'required': 'Author is required.', 
+      'minlength': 'Author must be at least 2 characters long.'
     },
     'comment': {
       'required': 'Comment is required.', 
@@ -55,7 +55,7 @@ export class DishdetailComponent implements OnInit {
 
   createForm(): void {
     this.commentForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2)]], 
+      author: ['', [Validators.required, Validators.minLength(2)]], 
       rating: ['', [Validators.pattern]], 
       comment: ['', [Validators.required, Validators.minLength(2)]]
     });
@@ -67,8 +67,9 @@ export class DishdetailComponent implements OnInit {
   onSubmit() {
     this.comment = this.commentForm.value; 
     this.comment.date = new Date().getDate().toString(); 
+    this.dish.comments.push(this.comment); 
     this.commentForm.reset({
-      name: '', 
+      author: '', 
       rating: '', 
       comment: ''
     });
