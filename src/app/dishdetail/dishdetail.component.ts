@@ -20,10 +20,10 @@ export class DishdetailComponent implements OnInit {
   commentForm: FormGroup; 
   comment: Comment; 
   dish: Dish;
+  dishcopy: any = null; 
   dishIds: number[];
   prev: number; 
   next: number;
-  dishcopy: any = null; 
   errMess: string;
   formErrors = {
     'author': '', 
@@ -54,10 +54,6 @@ export class DishdetailComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => { return this.dishservice.getDish(+params['id']); })
       .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); });
-      //   errmess => { this.dish = null; this.errMess = <any>errmess; });
-      // .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-      // .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); },
-      //             errMess => (this.errMess = errMess));
   }
 
   createForm(): void {
