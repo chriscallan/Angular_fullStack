@@ -36,6 +36,7 @@
 		<md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
 	</div>
 
+	<div>
 	<div fxFlex="40" *ngIf="dish">
 		<md-list>
 			<h3>Comments</h3>
@@ -64,7 +65,6 @@
 		</md-list>
 	</div>
 	
-      
 	<div fxFlex fxFlexOffset="20px" class="form-size">
 		<form novalidate [formGroup]="commentForm" (ngSubmit)="onSubmit()">
 			<p>
@@ -93,6 +93,7 @@
 			<button type="submit" md-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
 		</form>
 	</div>
+</div>
 	<div *ngIf="errMess">
 			<h2>Error</h2>
 			<h4>{{errMess}}</h4>
