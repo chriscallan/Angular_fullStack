@@ -7,6 +7,7 @@ import { DishService } from '../services/dish.service';
 import { Comment } from '../shared/comment';
 
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/catch'; 
 
 @Component({
   selector: 'app-dishdetail',
@@ -23,6 +24,7 @@ export class DishdetailComponent implements OnInit {
   prev: number; 
   next: number;
 
+  errMess: string;
   formErrors = {
     'author': '', 
     'comment': ''
@@ -51,7 +53,8 @@ export class DishdetailComponent implements OnInit {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params
       .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
-      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); },
+                  errMess => (this.errMess = errMess));
   }
 
   createForm(): void {
@@ -61,7 +64,8 @@ export class DishdetailComponent implements OnInit {
       comment: ['', [Validators.required, Validators.minLength(2)]]
     });
     
-    this.commentForm.valueChanges.subscribe(comment => this.onValueChanged(comment));
+    this.commentForm.valueChanges.subscribe(comment => this.onValueChanged(comment), 
+          errMess => (this.errMess = errMess));
     this.onValueChanged(); //re-set the validation messages
   }
 
