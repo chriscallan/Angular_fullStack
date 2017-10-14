@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 import { Comment } from '../shared/comment';
-import { trigger, state, style, animate, transition } from '@angular/animations'; 
+import { visibility, flyInOut, expand } from '../animations/app.animation';
 
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/catch'; 
@@ -13,19 +13,15 @@ import 'rxjs/add/operator/catch';
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
-  styleUrls: ['./dishdetail.component.scss'],   
+  styleUrls: ['./dishdetail.component.scss'], 
+  host: {
+    '[@flyInOut]': 'true', 
+    'style': 'display: block;'
+  },   
   animations: [
-    trigger('visibility', [
-        state('shown', style({
-            transform: 'scale(1.0)',
-            opacity: 1
-        })),
-        state('hidden', style({
-            transform: 'scale(0.5)',
-            opacity: 0
-        })),
-        transition('* => *', animate('0.5s ease-in-out'))
-    ])
+    flyInOut(), 
+    visibility(), 
+    expand()
   ]
 })
 
