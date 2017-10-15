@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenuComponent } from './menu.component';
 import { MdToolbarModule, MdButtonModule, MdCheckboxModule, MatListModule, MatGridListModule, MatCardModule } from '@angular/material';
 import { MdDialog, MdDialogRef, MdDialogModule, MdInputModule, MdOption, MdSelectModule, MdFormFieldModule } from '@angular/material';
-import { MdGridTile, MatGridList, MdSpinner, MatGridTile } from '@angular/material';
+import { MdGridTile, MatGridList, MdSpinner, MatGridTile, MatProgressSpinner, MdProgressSpinnerModule, MdProgressSpinner, MatProgressSpinnerModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout'; 
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
@@ -24,7 +24,7 @@ describe('MenuComponent', () => {
         return Observable.of(DISHES); 
       }
     }
-    
+
     TestBed.configureTestingModule({
       imports: [ BrowserAnimationsModule, 
         FlexLayoutModule, 
