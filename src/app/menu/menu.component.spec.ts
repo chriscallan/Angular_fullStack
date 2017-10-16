@@ -28,6 +28,7 @@ describe('MenuComponent', () => {
     TestBed.configureTestingModule({
       imports: [ BrowserAnimationsModule, 
         FlexLayoutModule, 
+        MatProgressSpinnerModule,
       RouterTestingModule.withRoutes(
         [{path: 'menu', component: MenuComponent}]
       )], 
