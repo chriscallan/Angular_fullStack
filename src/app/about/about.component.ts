@@ -22,6 +22,7 @@ import { flyInOut, expand } from '../animations/app.animation';
 export class AboutComponent implements OnInit {
 
   leaders: Leader[]; 
+  ldrErrMsg: string; 
 
   constructor(private leaderservice: LeaderService, 
     private route: ActivatedRoute, 
@@ -29,7 +30,8 @@ export class AboutComponent implements OnInit {
     @Inject('BaseURL') private BaseURL:string) { }
 
   ngOnInit() {
-    this.leaderservice.getLeaders().subscribe(leaders => this.leaders = leaders);
+    this.leaderservice.getLeaders().subscribe(leaders => (this.leaders = leaders), 
+          ldrErrMsg => (this.ldrErrMsg = ldrErrMsg));
   }
 
   goBack(): void {
